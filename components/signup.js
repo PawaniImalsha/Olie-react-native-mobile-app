@@ -1,9 +1,10 @@
 // components/signup.js
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator, Image } from 'react-native';
 import firebase from '../database/firebase';
 
+import bgimage from '../assets/image3.jpg';
 
 export default class Signup extends Component {
   
@@ -60,6 +61,7 @@ export default class Signup extends Component {
     }    
     return (
       <View style={styles.container}>  
+      <Image source={bgimage}/>
         <TextInput
           style={styles.inputStyle}
           placeholder="Name"
@@ -80,11 +82,13 @@ export default class Signup extends Component {
           maxLength={15}
           secureTextEntry={true}
         />   
+          <View style={styles.fixToText}>
         <Button
-          color="#3740FE"
+          color="#fff"
           title="Signup"
           onPress={() => this.registerUser()}
         />
+        </View>
 
         <Text 
           style={styles.loginText}
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     padding: 35,
-    backgroundColor: '#fff'
+    backgroundColor: '#69bdd2'
   },
   inputStyle: {
     width: '100%',
@@ -116,7 +120,8 @@ const styles = StyleSheet.create({
   loginText: {
     color: '#3740FE',
     marginTop: 25,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: 'bold'
   },
   preloader: {
     left: 0,
@@ -127,5 +132,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff'
+  },
+  fixToText: {
+    justifyContent: 'space-between',
+    backgroundColor: '#0b0c6b'
   }
 });
