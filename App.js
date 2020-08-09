@@ -8,6 +8,10 @@ import Login from './components/login';
 import Signup from './components/signup';
 import Home from './components/home';
 
+import AddOrdersScreen from './components/AddOrdersScreen';
+import OrderScreen from './components/OrderScreen';
+import OrderDetailScreen from './components/OrderDetailScreen';
+
 const Stack = createStackNavigator();
 
 function MyStack() {
@@ -44,6 +48,21 @@ function MyStack() {
          { title: 'Home' },
          {headerLeft: null} 
        }
+      />
+      <Stack.Screen 
+        name="AddOrdersScreen" 
+        component={AddOrdersScreen} 
+        options={{ title: 'Add Orders' }}
+      />
+      <Stack.Screen 
+        name="OrderScreen" 
+        component={OrderScreen} 
+        options={{ title: 'Orders List' }}
+      />
+      <Stack.Screen 
+       name="OrderDetailScreen" 
+       component={OrderDetailScreen} 
+       options={{ title: 'Order Detail' }}
       />
     </Stack.Navigator>
   );

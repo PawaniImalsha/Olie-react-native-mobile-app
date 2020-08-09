@@ -51,17 +51,40 @@ export default class Home extends Component {
         <Text style = {styles.textStyle}>
           Hello, {this.state.displayName}
         </Text>
-
+          
+        <View style={styles.fixToText}>  
         <Button
-          color="#3740FE"
+          color="#fff"
           title="Logout"
           onPress={() => this.signOut()}
         />
+        </View>
+
+      <Text></Text>
+      <View style={styles.fixToText}>
+      <Button
+      title="Add Orders"
+      color= "#fff"
+        onPress={() => this.props.navigation.navigate('AddOrdersScreen')}
+      
+    />
+    </View>
+
+    <Text></Text>
+    <View style={styles.fixToText}>
+    <Button
+      title="View Orders"
+      color="#fff"
+        onPress={() => this.props.navigation.navigate('OrderScreen')}
+      
+    />
+    </View>
       </View>
       </View>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -75,5 +98,9 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 15,
     marginBottom: 20
+  },
+  fixToText: {
+    justifyContent: 'space-between',
+    backgroundColor: '#0b7be3'
   }
 });
